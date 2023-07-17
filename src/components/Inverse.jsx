@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { inverse } from "../utils/inverse";
 import MatrixLayout from "./MatrixLayout";
-import "./Inverse.css";
 import OutputMatrix from "./OutputMatrix";
 
 function Inverse() {
