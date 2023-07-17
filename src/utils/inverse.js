@@ -10,6 +10,8 @@ const gcd = (a, b) => {
 
 const inverse = (matrix) => {
   const det = determinant(matrix);
+  if (det === 0) return false;
+
   const adjMatrix = adjoint(matrix);
   const inverseMatrix = [];
 
