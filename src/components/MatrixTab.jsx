@@ -5,6 +5,7 @@ import Cofactor from "./Cofactor";
 import { useState } from "react";
 import Adjoint from "./Adjoint";
 import Transpose from "./Transpose";
+import MatrixProduct from "./MatrixProduct";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");
@@ -14,6 +15,7 @@ function MatrixTab() {
     { name: "Cofactor", comp: <Cofactor /> },
     { name: "Adjoint", comp: <Adjoint /> },
     { name: "Transpose", comp: <Transpose /> },
+    { name: "Matrix Product", comp: <MatrixProduct /> },
   ];
 
   return (

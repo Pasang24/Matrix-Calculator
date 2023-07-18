@@ -11,8 +11,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<h1>Welcome to home page</h1>}></Route>
-        <Route path="/matrix/" element={<MatrixTab />} />
+        {/* <Route path="/" element={<h1>Welcome to home page</h1>}></Route> */}
+        <Route path="/" element={<MatrixTab />} />
       </Routes>
     </>
   );

@@ -5,6 +5,8 @@
   height: 100%;
   position: absolute;
   user-select: none;
+  left: -240px;
+  transition: left 200ms;
 }
 
 .sidebar-wrapper div {
@@ -15,4 +17,10 @@
 
 .sidebar-wrapper div:hover {
   background-color: rgb(93, 23, 222);
+}
+
+@media screen and (width >= 720px) {
+  .sidebar-wrapper {
+    left: 0;
+  }
 }

@@ -75,6 +75,7 @@ function MatrixLayout({
       setResult(null);
     }
   };
+
   const totalBoxes = isSquare ? row * row : row * column;
   const renderMatrix = Array(totalBoxes)
     .fill(0)

@@ -1,36 +1,38 @@
 import { useState } from "react";
 
-import { transpose } from "../utils/transpose";
-import MatrixLayout from "./MatrixLayout";
+import { product } from "../utils/product";
 import OutputMatrix from "./OutputMatrix";
+import DoubleMatrixLayout from "./DoubleMatrixLayout";
 
-function Transpose() {
-  const [row, setRow] = useState(2);
-  const [column, setColumn] = useState(2);
+function MatrixProduct() {
+  const [row1, setRow1] = useState(2);
+  const [row2, setRow2] = useState(2);
+  const [column1, setColumn1] = useState(2);
+  const [column2, setColumn2] = useState(2);
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  const getDim = (row, col) => {
-    setRow(row);
-    setColumn(col);
+  const getDim = (row1, col1, row2, col2) => {
+    setRow1(row1);
+    setRow2(row2);
+    setColumn1(col1);
+    setColumn2(col2);
   };
 
   return (
     <div className="container">
-      {" "}
-      <h2>Transpose Calculator</h2>
-      <MatrixLayout
+      <h2>Matrix Product Calculator</h2>
+      <DoubleMatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
         showResult={showResult}
-        method={transpose}
+        method={product}
         getDim={getDim}
-        isSquare={false}
       />
       {showResult && (
         <>
-          <h2 className="output-title">Transpose Matrix: </h2>
-          <OutputMatrix row={column} col={row}>
+          <h2 className="output-title">Product: </h2>
+          <OutputMatrix row={row1} col={column2}>
             {result.map((row) => {
               return row.map((el) => (
                 <div className="result-matrix-box">
@@ -45,4 +47,4 @@ function Transpose() {
   );
 }
 
-export default Transpose;
+export default MatrixProduct;

@@ -1,4 +1,5 @@
 .header-wrapper {
+  position: relative;
   background-color: rgb(27, 27, 27);
   display: flex;
   justify-content: center;
@@ -21,4 +22,39 @@
 
 .active-route {
   background-color: rgb(93, 23, 222);
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+.sidebar-toggle-btn svg {
+  color: white;
+}
+
+.show-sidebar {
+  left: 0;
+}
+
+@media (hover: hover) {
+  .sidebar-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media screen and (width >= 720px) {
+  .sidebar-toggle-btn {
+    display: none;
+  }
 }
