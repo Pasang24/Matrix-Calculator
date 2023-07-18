@@ -1,12 +1,12 @@
 import "./OutputMatrix.css";
 
-function OutputMatrix({ dimension, children }) {
+function OutputMatrix({ row, col, children }) {
   return (
     <div
       className="result-matrix-container"
       style={{
-        gridTemplateRows: `repeat(${dimension}, 1fr)`,
-        gridTemplateColumns: `repeat(${dimension}, 1fr)`,
+        gridTemplateRows: `repeat(${row}, 1fr)`,
+        gridTemplateColumns: `repeat(${col}, 1fr)`,
       }}
     >
       {children}

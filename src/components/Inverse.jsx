@@ -23,13 +23,14 @@ function Inverse() {
         showResult={showResult}
         method={inverse}
         getDim={getDim}
+        isSquare={true}
       />
       {showResult && (
         <>
           {result ? (
             <>
               <h2 className="output-title">Inverse Matrix: </h2>
-              <OutputMatrix dimension={dim}>
+              <OutputMatrix row={dim} col={dim}>
                 {result.map((row) => {
                   return row.map((el) => (
                     <div className="result-matrix-box">

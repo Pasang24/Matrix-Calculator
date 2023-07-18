@@ -1,34 +1,36 @@
 import { useState } from "react";
 
-import { adjoint } from "../utils/adjoint";
+import { transpose } from "../utils/transpose";
 import MatrixLayout from "./MatrixLayout";
 import OutputMatrix from "./OutputMatrix";
 
-function Adjoint() {
-  const [dim, setDim] = useState(2);
+function Transpose() {
+  const [row, setRow] = useState(2);
+  const [column, setColumn] = useState(2);
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  const getDim = (dim) => {
-    setDim(dim);
+  const getDim = (row, col) => {
+    setRow(row);
+    setColumn(col);
   };
 
   return (
     <div className="container">
       {" "}
-      <h2>Adjoint Calculator</h2>
+      <h2>Transpose Calculator</h2>
       <MatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
         showResult={showResult}
-        method={adjoint}
+        method={transpose}
         getDim={getDim}
-        isSquare={true}
+        isSquare={false}
       />
       {showResult && (
         <>
-          <h2 className="output-title">Adjoint Matrix: </h2>
-          <OutputMatrix row={dim} col={dim}>
+          <h2 className="output-title">Transpose Matrix: </h2>
+          <OutputMatrix row={column} col={row} isSquare={false}>
             {result.map((row) => {
               return row.map((el) => (
                 <div className="result-matrix-box">
@@ -43,4 +45,4 @@ function Adjoint() {
   );
 }
 
-export default Adjoint;
+export default Transpose;

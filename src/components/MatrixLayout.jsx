@@ -7,18 +7,21 @@ function MatrixLayout({
   setShowResult,
   method,
   getDim,
+  isSquare,
 }) {
-  const [dimension, setDimension] = useState(2);
+  const [row, setRow] = useState(2);
+  const [column, setColumn] = useState(2);
 
   useEffect(() => {
     handleReset();
-  }, [dimension]);
+  }, [row, column]);
 
-  const handleChange = (event) => {
+  const handleChange = (event, isRow) => {
     const value = parseInt(event.target.value) || 0;
 
     if (value < 0) return;
-    setDimension(value);
+    if (isRow) setRow(value);
+    else setColumn(value);
     setShowResult(false);
     setResult(0);
   };
@@ -35,10 +38,12 @@ function MatrixLayout({
           throw new Error("Please give valid input");
         }
 
-        const col = parseInt(box.id) % dimension;
+        const dim = isSquare ? row : column;
+        const col = parseInt(box.id) % dim;
+
         rowMatrix.push(value);
 
-        if (col === dimension - 1) {
+        if (col === dim - 1) {
           matrixArr.push(rowMatrix);
           rowMatrix = [];
         }
@@ -50,7 +55,9 @@ function MatrixLayout({
 
     if (!hasError) {
       const ans = method(matrixArr);
-      if (getDim) getDim(dimension);
+      if (getDim) {
+        isSquare ? getDim(row) : getDim(row, column);
+      }
       setResult(ans);
       setShowResult(true);
     }
@@ -68,8 +75,8 @@ function MatrixLayout({
       setResult(null);
     }
   };
-
-  const renderMatrix = Array(dimension * dimension)
+  const totalBoxes = isSquare ? row * row : row * column;
+  const renderMatrix = Array(totalBoxes)
     .fill(0)
     .map((_, indx) => {
       return <input className="matrix-box" key={indx} id={indx}></input>;
@@ -77,24 +84,38 @@ function MatrixLayout({
 
   return (
     <>
-      <input
-        className="dimension-input"
-        type="number"
-        onChange={handleChange}
-        value={dimension || ""}
-        min={0}
-        placeholder="Enter Dimension of Matrix"
-      />
-      {dimension > 0 && (
+      <div className="dimension-input-wrapper">
+        <h3>{isSquare ? "Dimension:" : "Row:"}</h3>
+        <input
+          className="dimension-input"
+          type="number"
+          onChange={(event) => handleChange(event, true)}
+          value={row || ""}
+          min={0}
+        />
+      </div>
+      {!isSquare && (
+        <div className="dimension-input-wrapper">
+          <h3>Column:</h3>
+          <input
+            className="dimension-input"
+            type="number"
+            onChange={(event) => handleChange(event, false)}
+            value={column || ""}
+            min={0}
+          />
+        </div>
+      )}
+      {row > 0 && column > 0 ? (
         <div className="matrix-wrapper">
           <h2 style={{ textAlign: "center" }}>
-            Enter elements of {dimension} x {dimension} matrix
+            Enter elements of {row} x {isSquare ? row : column} matrix
           </h2>
           <div
             className="matrix-container"
             style={{
-              gridTemplateRows: `repeat(${dimension}, 1fr)`,
-              gridTemplateColumns: `repeat(${dimension}, 1fr)`,
+              gridTemplateRows: `repeat(${row}, 1fr)`,
+              gridTemplateColumns: `repeat(${isSquare ? row : column}, 1fr)`,
             }}
           >
             {renderMatrix}
@@ -108,6 +129,8 @@ function MatrixLayout({
             </button>
           </div>
         </div>
+      ) : (
+        <h2 className="dim-err-msg">Please Enter valid dimension!</h2>
       )}
     </>
   );

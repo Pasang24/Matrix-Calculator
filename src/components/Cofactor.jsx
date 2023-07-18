@@ -23,11 +23,12 @@ function Cofactor() {
         showResult={showResult}
         method={cofactor}
         getDim={getDim}
+        isSquare={true}
       />
       {showResult && (
         <>
           <h2 className="output-title">Cofactor Matrix: </h2>
-          <OutputMatrix dimension={dim}>
+          <OutputMatrix row={dim} col={dim}>
             {result.map((row) => {
               return row.map((el) => (
                 <div className="result-matrix-box">

@@ -15,6 +15,7 @@ function Determinant() {
         showResult={showResult}
         setShowResult={setShowResult}
         method={determinant}
+        isSquare={true}
       />
       {showResult && <h2>Determinant: {result}</h2>}
     </div>

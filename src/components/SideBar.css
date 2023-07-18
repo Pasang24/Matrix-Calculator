@@ -4,6 +4,7 @@
   min-height: calc(100vh - 64px);
   height: 100%;
   position: absolute;
+  user-select: none;
 }
 
 .sidebar-wrapper div {
