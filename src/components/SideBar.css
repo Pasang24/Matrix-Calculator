@@ -1,0 +1,17 @@
+.sidebar-wrapper {
+  background-color: rgb(27, 27, 27);
+  width: 240px;
+  min-height: calc(100vh - 64px);
+  height: 100%;
+  position: absolute;
+}
+
+.sidebar-wrapper div {
+  padding: 16px;
+  transition: background-color 200ms;
+  cursor: pointer;
+}
+
+.sidebar-wrapper div:hover {
+  background-color: rgb(93, 23, 222);
+}

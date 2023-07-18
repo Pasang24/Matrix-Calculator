@@ -28,7 +28,7 @@ function Inverse() {
         <>
           {result ? (
             <>
-              <h2 className="output-title">Inverse: </h2>
+              <h2 className="output-title">Inverse Matrix: </h2>
               <OutputMatrix dimension={dim}>
                 {result.map((row) => {
                   return row.map((el) => (

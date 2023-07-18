@@ -100,10 +100,10 @@ function MatrixLayout({
             {renderMatrix}
           </div>
           <div className="btn-container">
-            <button onClick={handleCalculate} className="btn">
+            <button onClick={handleCalculate} className="btn calc-btn">
               Calculate
             </button>
-            <button onClick={handleReset} className="btn">
+            <button onClick={handleReset} className="btn reset-btn">
               Reset
             </button>
           </div>

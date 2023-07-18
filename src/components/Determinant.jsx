@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MatrixLayout from "./MatrixLayout.jsx";
 import { determinant } from "../utils/determinant.js";
 
@@ -16,7 +16,7 @@ function Determinant() {
         setShowResult={setShowResult}
         method={determinant}
       />
-      {showResult && <h3>Determinant: {result}</h3>}
+      {showResult && <h2>Determinant: {result}</h2>}
     </div>
   );
 }
