@@ -3,7 +3,7 @@
   width: 240px;
   min-height: calc(100vh - 64px);
   height: 100%;
-  position: absolute;
+  position: fixed;
   user-select: none;
   left: -240px;
   transition: left 200ms;

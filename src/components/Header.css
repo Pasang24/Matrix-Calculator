@@ -1,10 +1,13 @@
 .header-wrapper {
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 2;
   background-color: rgb(27, 27, 27);
   display: flex;
   justify-content: center;
   gap: 10px;
   padding: 16px;
+  width: 100%;
 }
 
 .route {

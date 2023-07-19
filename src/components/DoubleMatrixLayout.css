@@ -1,3 +1,11 @@
+.double-matrix-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
 .matrix-box-1,
 .matrix-box-2 {
   width: 50px;
