@@ -1,8 +1,9 @@
 import { useState } from "react";
+import parse from "html-react-parser";
 
-import { rowEchelon } from "../utils/rowEchelon";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { rowEchelon } from "../../utils/rowEchelon.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
 export default function RowEchelon() {
   const [row, setRow] = useState(2);
@@ -68,7 +69,7 @@ export default function RowEchelon() {
           {steps.map((step, indx) => {
             return (
               <div className="step-wrapper" key={indx}>
-                <h4 className="output-title">{step.step}</h4>
+                <h4 className="output-title">{parse(step.step)}</h4>
                 <OutputMatrix row={row} col={column}>
                   {step.matrix.map((row) => {
                     return row.map((el, indx) => (

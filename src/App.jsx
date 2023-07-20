@@ -1,10 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
-import MatrixTab from "./components/MatrixTab";
-import Header from "./components/Header";
-import Determinant from "./components/Determinant";
-import Inverse from "./components/Inverse";
-import Cofactor from "./components/Cofactor";
+import MatrixTab from "./components/tab components/MatrixTab.jsx";
+import Header from "./components/custom components/Header.jsx";
+import NumberSystemTab from "./components/tab components/NumberSystemTab.jsx";
 
 function App() {
   return (
@@ -13,6 +11,7 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<h1>Welcome to home page</h1>}></Route> */}
         <Route path="/" element={<MatrixTab />} />
+        <Route path="/number-system" element={<NumberSystemTab />} />
       </Routes>
     </>
   );

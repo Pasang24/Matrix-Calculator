@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MatrixLayout from "./MatrixLayout.jsx";
-import { determinant } from "../utils/determinant.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import { determinant } from "../../utils/determinant.js";
 
 function Determinant() {
   const [result, setResult] = useState(null);
@@ -9,7 +9,7 @@ function Determinant() {
   return (
     <div className="container">
       {" "}
-      <h2>Determinant Calculator</h2>
+      <h2 className="calc-title">Determinant Calculator</h2>
       <MatrixLayout
         setResult={setResult}
         showResult={showResult}

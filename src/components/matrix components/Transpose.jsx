@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { transpose } from "../utils/transpose";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { transpose } from "../../utils/transpose.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
 function Transpose() {
   const [row, setRow] = useState(2);
@@ -18,7 +18,7 @@ function Transpose() {
   return (
     <div className="container">
       {" "}
-      <h2>Transpose Calculator</h2>
+      <h2 className="calc-title">Transpose Calculator</h2>
       <MatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}

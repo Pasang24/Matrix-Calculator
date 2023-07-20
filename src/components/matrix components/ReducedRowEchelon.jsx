@@ -1,8 +1,9 @@
 import { useState } from "react";
+import parse from "html-react-parser";
 
-import { reducedRowEchelon } from "../utils/reducedRowEchelon";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { reducedRowEchelon } from "../../utils/reducedRowEchelon.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
 export default function ReducedRowEchelon() {
   const [row, setRow] = useState(2);
@@ -30,7 +31,7 @@ export default function ReducedRowEchelon() {
   return (
     <div className="container">
       {" "}
-      <h2>Reduced Row Echelon Calculator</h2>
+      <h2 className="calc-title">Reduced Row Echelon Calculator</h2>
       <MatrixLayout
         setResult={getResults}
         setShowResult={getShowResults}
@@ -68,7 +69,7 @@ export default function ReducedRowEchelon() {
           {steps.map((step, indx) => {
             return (
               <div className="step-wrapper" key={indx}>
-                <h4 className="output-title">{step.step}</h4>
+                <h4 className="output-title">{parse(step.step)}</h4>
                 <OutputMatrix row={row} col={column}>
                   {step.matrix.map((row) => {
                     return row.map((el, indx) => (

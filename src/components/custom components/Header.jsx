@@ -30,9 +30,9 @@ function Header() {
         className={({ isActive }) =>
           isActive ? "route active-route" : "route"
         }
-        to="/linear"
+        to="/number-system"
       >
-        Linear Algebra
+        Base-N
       </NavLink>
     </nav>
   );

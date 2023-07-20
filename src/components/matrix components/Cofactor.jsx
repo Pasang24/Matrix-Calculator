@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { adjoint } from "../utils/adjoint";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { cofactor } from "../../utils/cofactor.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
-function Adjoint() {
+function Cofactor() {
   const [dim, setDim] = useState(2);
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -16,18 +16,18 @@ function Adjoint() {
   return (
     <div className="container">
       {" "}
-      <h2>Adjoint Calculator</h2>
+      <h2 className="calc-title">Cofactor Calculator</h2>
       <MatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
         showResult={showResult}
-        method={adjoint}
+        method={cofactor}
         getDim={getDim}
         isSquare={true}
       />
       {showResult && (
         <>
-          <h2 className="output-title">Adjoint Matrix: </h2>
+          <h2 className="output-title">Cofactor Matrix: </h2>
           <OutputMatrix row={dim} col={dim}>
             {result.map((row) => {
               return row.map((el, indx) => (
@@ -43,4 +43,4 @@ function Adjoint() {
   );
 }
 
-export default Adjoint;
+export default Cofactor;

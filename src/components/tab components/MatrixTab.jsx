@@ -1,13 +1,13 @@
-import SideBar from "./SideBar";
-import Determinant from "./Determinant";
-import Inverse from "./Inverse";
-import Cofactor from "./Cofactor";
+import SideBar from "../custom components/SideBar.jsx";
+import Determinant from "../matrix components/Determinant.jsx";
+import Inverse from "../matrix components/Inverse.jsx";
+import Cofactor from "../matrix components/Cofactor.jsx";
 import { useState } from "react";
-import Adjoint from "./Adjoint";
-import Transpose from "./Transpose";
-import MatrixProduct from "./MatrixProduct";
-import RowEchelon from "./RowEchelon";
-import ReducedRowEchelon from "./ReducedRowEchelon";
+import Adjoint from "../matrix components/Adjoint.jsx";
+import Transpose from "../matrix components/Transpose.jsx";
+import MatrixProduct from "../matrix components/MatrixProduct.jsx";
+import RowEchelon from "../matrix components/RowEchelon.jsx";
+import ReducedRowEchelon from "../matrix components/ReducedRowEchelon.jsx";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");

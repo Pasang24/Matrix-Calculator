@@ -1,34 +1,34 @@
 import { useState } from "react";
 
-import { cofactor } from "../utils/cofactor";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { product } from "../../utils/product.js";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
+import DoubleMatrixLayout from "../matrix layouts/DoubleMatrixLayout.jsx";
 
-function Cofactor() {
-  const [dim, setDim] = useState(2);
+function MatrixProduct() {
+  const [row, setRow] = useState(2);
+  const [column, setColumn] = useState(2);
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  const getDim = (dim) => {
-    setDim(dim);
+  const getDim = (row, col) => {
+    setRow(row);
+    setColumn(col);
   };
 
   return (
     <div className="container">
-      {" "}
-      <h2>Cofactor Calculator</h2>
-      <MatrixLayout
+      <h2 className="calc-title">Matrix Product Calculator</h2>
+      <DoubleMatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
         showResult={showResult}
-        method={cofactor}
+        method={product}
         getDim={getDim}
-        isSquare={true}
       />
       {showResult && (
         <>
-          <h2 className="output-title">Cofactor Matrix: </h2>
-          <OutputMatrix row={dim} col={dim}>
+          <h2 className="output-title">Product: </h2>
+          <OutputMatrix row={row} col={column}>
             {result.map((row) => {
               return row.map((el, indx) => (
                 <div className="result-matrix-box" key={indx}>
@@ -43,4 +43,4 @@ function Cofactor() {
   );
 }
 
-export default Cofactor;
+export default MatrixProduct;

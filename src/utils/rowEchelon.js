@@ -33,7 +33,7 @@ const rowEchelon = (matrix) => {
             }
             stepsArr.push({
               matrix: returnMatrix(matrix),
-              step: `R${pivotRow + 1} <--> R${j + 1}`,
+              step: `R<sub>${pivotRow + 1}</sub> <--> R<sub>${j + 1}</sub>`,
             });
             break;
           }
@@ -55,9 +55,10 @@ const rowEchelon = (matrix) => {
 
       stepsArr.push({
         matrix: returnMatrix(matrix),
-        step: `R${pivotRow + 1} --> (${fracDiv("1", scalar)}) x R${
-          pivotRow + 1
-        }`,
+        step: `R<sub>${pivotRow + 1}</sub> --> (${fracDiv(
+          "1",
+          scalar
+        )}) x R<sub>${pivotRow + 1}</sub>`,
       });
     }
 
@@ -75,9 +76,9 @@ const rowEchelon = (matrix) => {
       }
       stepsArr.push({
         matrix: returnMatrix(matrix),
-        step: `R${j + 1} --> R${j + 1} ${
+        step: `R<sub>${j + 1}</sub> --> R<sub>${j + 1}</sub> ${
           factor.includes("-") ? `+ (${factor.slice(1)})` : `- (${factor})`
-        } x R${pivotRow + 1}`,
+        } x R<sub>${pivotRow + 1}</sub>`,
       });
     }
     pivotRow++;

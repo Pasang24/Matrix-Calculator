@@ -1,34 +1,34 @@
 import { useState } from "react";
 
-import { product } from "../utils/product";
-import OutputMatrix from "./OutputMatrix";
-import DoubleMatrixLayout from "./DoubleMatrixLayout";
+import { adjoint } from "../../utils/adjoint.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
-function MatrixProduct() {
-  const [row, setRow] = useState(2);
-  const [column, setColumn] = useState(2);
+function Adjoint() {
+  const [dim, setDim] = useState(2);
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  const getDim = (row, col) => {
-    setRow(row);
-    setColumn(col);
+  const getDim = (dim) => {
+    setDim(dim);
   };
 
   return (
     <div className="container">
-      <h2>Matrix Product Calculator</h2>
-      <DoubleMatrixLayout
+      {" "}
+      <h2 className="calc-title">Adjoint Calculator</h2>
+      <MatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
         showResult={showResult}
-        method={product}
+        method={adjoint}
         getDim={getDim}
+        isSquare={true}
       />
       {showResult && (
         <>
-          <h2 className="output-title">Product: </h2>
-          <OutputMatrix row={row} col={column}>
+          <h2 className="output-title">Adjoint Matrix: </h2>
+          <OutputMatrix row={dim} col={dim}>
             {result.map((row) => {
               return row.map((el, indx) => (
                 <div className="result-matrix-box" key={indx}>
@@ -43,4 +43,4 @@ function MatrixProduct() {
   );
 }
 
-export default MatrixProduct;
+export default Adjoint;

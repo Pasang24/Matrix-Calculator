@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { inverse } from "../utils/inverse";
-import MatrixLayout from "./MatrixLayout";
-import OutputMatrix from "./OutputMatrix";
+import { inverse } from "../../utils/inverse.js";
+import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
+import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 
 function Inverse() {
   const [dim, setDim] = useState(2);
@@ -16,7 +16,7 @@ function Inverse() {
   return (
     <div className="container">
       {" "}
-      <h2>Inverse Calculator</h2>
+      <h2 className="calc-title">Inverse Calculator</h2>
       <MatrixLayout
         setResult={setResult}
         setShowResult={setShowResult}
