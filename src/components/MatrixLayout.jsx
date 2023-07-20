@@ -22,8 +22,8 @@ function MatrixLayout({
     if (value < 0) return;
     if (isRow) setRow(value);
     else setColumn(value);
-    setShowResult(false);
-    setResult(0);
+    // setShowResult(false, false);
+    // setResult(null);
   };
 
   const handleCalculate = () => {
@@ -59,7 +59,7 @@ function MatrixLayout({
         isSquare ? getDim(row) : getDim(row, column);
       }
       setResult(ans);
-      setShowResult(true);
+      setShowResult(true, false);
     }
   };
 
@@ -71,7 +71,7 @@ function MatrixLayout({
     });
 
     if (showResult) {
-      setShowResult(false);
+      setShowResult(false, false);
       setResult(null);
     }
   };

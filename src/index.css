@@ -39,6 +39,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 20px;
   text-align: center;
   aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .output-title {
@@ -77,6 +78,20 @@ body::-webkit-scrollbar-thumb {
 .dim-err-msg {
   text-align: center;
   margin-top: 20px;
+}
+
+.steps-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (width >= 720px) {

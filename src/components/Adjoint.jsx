@@ -30,8 +30,8 @@ function Adjoint() {
           <h2 className="output-title">Adjoint Matrix: </h2>
           <OutputMatrix row={dim} col={dim}>
             {result.map((row) => {
-              return row.map((el) => (
-                <div className="result-matrix-box">
+              return row.map((el, indx) => (
+                <div className="result-matrix-box" key={indx}>
                   <span>{el}</span>
                 </div>
               ));

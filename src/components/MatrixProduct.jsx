@@ -30,8 +30,8 @@ function MatrixProduct() {
           <h2 className="output-title">Product: </h2>
           <OutputMatrix row={row} col={column}>
             {result.map((row) => {
-              return row.map((el) => (
-                <div className="result-matrix-box">
+              return row.map((el, indx) => (
+                <div className="result-matrix-box" key={indx}>
                   <span>{el}</span>
                 </div>
               ));

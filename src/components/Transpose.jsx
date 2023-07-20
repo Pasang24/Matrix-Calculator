@@ -32,8 +32,8 @@ function Transpose() {
           <h2 className="output-title">Transpose Matrix: </h2>
           <OutputMatrix row={column} col={row}>
             {result.map((row) => {
-              return row.map((el) => (
-                <div className="result-matrix-box">
+              return row.map((el, indx) => (
+                <div className="result-matrix-box" key={indx}>
                   <span>{el}</span>
                 </div>
               ));

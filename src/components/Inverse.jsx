@@ -32,10 +32,10 @@ function Inverse() {
               <h2 className="output-title">Inverse Matrix: </h2>
               <OutputMatrix row={dim} col={dim}>
                 {result.map((row) => {
-                  return row.map((el) => (
-                    <div className="result-matrix-box">
+                  return row.map((el, indx) => (
+                    <div className="result-matrix-box" key={indx}>
                       {el.split("/").map((val, indx, arr) => (
-                        <span>{`${val}${
+                        <span key={indx}>{`${val}${
                           indx < arr.length - 1 ? "/" : ""
                         }`}</span>
                       ))}
