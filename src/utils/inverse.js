@@ -19,7 +19,6 @@ const inverse = (matrix) => {
     const rowMatrix = [];
     for (let j = 0; j < adjMatrix[0].length; j++) {
       const gcdVal = gcd(Math.abs(adjMatrix[i][j]), Math.abs(det));
-      console.log(gcdVal);
       const num = adjMatrix[i][j] / gcdVal;
       const deno = det / gcdVal;
       const absNum = Math.abs(num);
