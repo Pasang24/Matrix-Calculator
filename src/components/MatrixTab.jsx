@@ -7,6 +7,7 @@ import Adjoint from "./Adjoint";
 import Transpose from "./Transpose";
 import MatrixProduct from "./MatrixProduct";
 import RowEchelon from "./RowEchelon";
+import ReducedRowEchelon from "./ReducedRowEchelon";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");
@@ -18,6 +19,7 @@ function MatrixTab() {
     { name: "Transpose", comp: <Transpose /> },
     { name: "Matrix Product", comp: <MatrixProduct /> },
     { name: "Row Echelon Form", comp: <RowEchelon /> },
+    { name: "Reduced Row Echelon Form", comp: <ReducedRowEchelon /> },
   ];
 
   return (
