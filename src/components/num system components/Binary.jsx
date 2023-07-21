@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { baseNdigits } from "../../utils/baseNdigits";
 import InputLayout from "../num system layouts/InputLayout";
+import OutputLayout from "../num system layouts/OutputLayout";
 
 function Binary() {
   const [results, setResults] = useState(null);
@@ -8,24 +9,15 @@ function Binary() {
 
   return (
     <div className="container">
-      <h2>Enter Binary Number:</h2>
+      <h2 className="calc-title">Enter Binary Number:</h2>
       <InputLayout
         base={2}
         digits={baseNdigits(2)}
         setResults={setResults}
         setShowResult={setShowResult}
+        singleBase={false}
       />
-      {showResult && (
-        <div className="base-results-wrapper">
-          {results.map((result, indx) => {
-            return (
-              <h2 key={indx}>
-                {result.base}: {result.value || "0"}
-              </h2>
-            );
-          })}
-        </div>
-      )}
+      {showResult && <OutputLayout results={results} />}
     </div>
   );
 }

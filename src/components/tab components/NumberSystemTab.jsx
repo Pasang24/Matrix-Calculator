@@ -4,14 +4,16 @@ import Binary from "../num system components/Binary.jsx";
 import Decimal from "../num system components/Decimal.jsx";
 import Octal from "../num system components/Octal.jsx";
 import Hexa from "../num system components/Hexa.jsx";
+import BaseNToM from "../num system components/BaseNToM.jsx";
 
 function NumberSystemTab() {
-  const [currentTab, setCurrentTab] = useState("Base-2 to Base-8/10/16");
+  const [currentTab, setCurrentTab] = useState("Base-2 to Other");
   const tabData = [
-    { name: "Base-2 to Base-8/10/16", comp: <Binary /> },
-    { name: "Base-8 to Base-2/10/16", comp: <Octal /> },
-    { name: "Base-10 to Base-2/8/16", comp: <Decimal /> },
-    { name: "Base-16 to Base-2/8/10", comp: <Hexa /> },
+    { name: "Base-2 to Other", comp: <Binary /> },
+    { name: "Base-8 to Other", comp: <Octal /> },
+    { name: "Base-10 to Other", comp: <Decimal /> },
+    { name: "Base-16 to Other", comp: <Hexa /> },
+    { name: "Base-N to Base-M", comp: <BaseNToM /> },
   ];
   return (
     <div className="tab-wrapper">

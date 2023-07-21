@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { baseNdigits } from "../../utils/baseNdigits";
 import InputLayout from "../num system layouts/InputLayout";
+import OutputLayout from "../num system layouts/OutputLayout";
 
 function Decimal() {
   const [results, setResults] = useState(null);
@@ -8,26 +9,15 @@ function Decimal() {
 
   return (
     <div className="container">
-      <h2>Enter Decimal Number:</h2>
+      <h2 className="calc-title">Enter Decimal Number:</h2>
       <InputLayout
         base={10}
         digits={baseNdigits(10)}
         setResults={setResults}
         setShowResult={setShowResult}
+        singleBase={false}
       />
-      {showResult && (
-        <div>
-          {results.map((result, indx) => {
-            return (
-              <div key={indx}>
-                <h2>
-                  {result.base}: {result.value || "0"}
-                </h2>
-              </div>
-            );
-          })}
-        </div>
-      )}
+      {showResult && <OutputLayout results={results} />}
     </div>
   );
 }
