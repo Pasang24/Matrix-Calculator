@@ -38,7 +38,7 @@ function BaseNToM() {
           />
         </div>
       </div>
-      <h2>{`Enter Base-${startBase} number: `}</h2>
+      <h2 className="calc-title">{`Enter Base-${startBase} number: `}</h2>
       <InputLayout
         base={startBase}
         digits={baseNdigits(startBase)}

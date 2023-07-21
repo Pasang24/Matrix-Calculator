@@ -46,28 +46,28 @@ const rowEchelon = (matrix) => {
 
     if (i >= col) break;
 
-    const scalar = matrix[pivotRow][i];
+    // const scalar = matrix[pivotRow][i];
 
-    if (scalar !== "1") {
-      for (let j = 0; j < col; j++) {
-        matrix[pivotRow][j] = fracDiv(matrix[pivotRow][j], scalar);
-      }
+    // if (scalar !== "1") {
+    //   for (let j = 0; j < col; j++) {
+    //     matrix[pivotRow][j] = fracDiv(matrix[pivotRow][j], scalar);
+    //   }
 
-      stepsArr.push({
-        matrix: returnMatrix(matrix),
-        step: `R<sub>${pivotRow + 1}</sub> --> (${fracDiv(
-          "1",
-          scalar
-        )}) x R<sub>${pivotRow + 1}</sub>`,
-      });
-    }
+    //   stepsArr.push({
+    //     matrix: returnMatrix(matrix),
+    //     step: `R<sub>${pivotRow + 1}</sub> --> (${fracDiv(
+    //       "1",
+    //       scalar
+    //     )}) x R<sub>${pivotRow + 1}</sub>`,
+    //   });
+    // }
 
     for (let j = pivotRow + 1; j < row; j++) {
       if (matrix[j][i] === "0") {
         continue;
       }
 
-      const factor = matrix[j][i];
+      const factor = fracDiv(matrix[j][i], matrix[pivotRow][i]);
       for (let k = 0; k < col; k++) {
         matrix[j][k] = fracSub(
           matrix[j][k],
