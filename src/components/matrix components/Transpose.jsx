@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { transpose } from "../../utils/transpose.js";
+import { transpose } from "../../utils/matrix utils/transpose.js";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 

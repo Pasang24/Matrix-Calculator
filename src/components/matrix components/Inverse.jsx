@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { inverse } from "../../utils/inverse.js";
+import { inverse } from "../../utils/matrix utils/inverse.js";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 

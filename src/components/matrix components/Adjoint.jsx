@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { adjoint } from "../../utils/adjoint.js";
+import { adjoint } from "../../utils/matrix utils/adjoint.js";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 

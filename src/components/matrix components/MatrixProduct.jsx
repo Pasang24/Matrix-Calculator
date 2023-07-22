@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { product } from "../../utils/product.js";
+import { product } from "../../utils/matrix utils/product.js";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 import DoubleMatrixLayout from "../matrix layouts/DoubleMatrixLayout.jsx";
 

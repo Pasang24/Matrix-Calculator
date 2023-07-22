@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { cofactor } from "../../utils/cofactor.js";
+import { cofactor } from "../../utils/matrix utils/cofactor.js";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 

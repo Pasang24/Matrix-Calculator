@@ -1,7 +1,7 @@
 import { useState } from "react";
 import parse from "html-react-parser";
 
-import { reducedRowEchelon } from "../../utils/reducedRowEchelon.js";
+import { reducedRowEchelon } from "../../utils/matrix utils/reducedRowEchelon.js";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
 import OutputMatrix from "../matrix layouts/OutputMatrix.jsx";
 

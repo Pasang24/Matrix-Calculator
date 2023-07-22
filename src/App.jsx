@@ -4,6 +4,7 @@ import MatrixTab from "./components/tab components/MatrixTab.jsx";
 import Header from "./components/custom components/Header.jsx";
 import NumberSystemTab from "./components/tab components/NumberSystemTab.jsx";
 import GraphTab from "./components/tab components/GraphTab.jsx";
+import MathTab from "./components/tab components/MathTab.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             </h2>
           }
         />
+        {/* <Route path="/" element={<MathTab />} /> */}
         <Route path="/matrix" element={<MatrixTab />} />
         <Route path="/base-n" element={<NumberSystemTab />} />
         <Route path="/graph" element={<GraphTab />} />

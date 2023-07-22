@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DropDown from "../custom components/DropDown";
 import InputLayout from "../num system layouts/InputLayout";
-import { baseNdigits } from "../../utils/baseNdigits";
+import { baseNdigits } from "../../utils/baseN utils/baseNdigits.js";
 import OutputLayout from "../num system layouts/OutputLayout";
 
 function BaseNToM() {

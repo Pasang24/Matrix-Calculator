@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MatrixLayout from "../matrix layouts/MatrixLayout.jsx";
-import { determinant } from "../../utils/determinant.js";
+import { determinant } from "../../utils/matrix utils/determinant.js";
 
 function Determinant() {
   const [result, setResult] = useState(null);

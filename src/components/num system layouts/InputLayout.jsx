@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { decToOther } from "../../utils/decToOther.";
+import { decToOther } from "../../utils/baseN utils/decToOther..js";
 import "./InputLayout.css";
 
 function InputLayout({

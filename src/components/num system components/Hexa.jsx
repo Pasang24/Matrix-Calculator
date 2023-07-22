@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { baseNdigits } from "../../utils/baseNdigits";
+import { baseNdigits } from "../../utils/baseN utils/baseNdigits.js";
 import InputLayout from "../num system layouts/InputLayout";
 import OutputLayout from "../num system layouts/OutputLayout";
 
