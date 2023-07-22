@@ -21,6 +21,7 @@ function Header() {
     { name: "Matrix", to: "/matrix" },
     { name: "Base-N", to: "/base-n" },
     { name: "Graph", to: "/graph" },
+    { name: "Unit Converter", to: "/unit-converter" },
   ];
 
   const handleToggle = () => {

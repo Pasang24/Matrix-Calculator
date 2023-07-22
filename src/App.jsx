@@ -5,6 +5,7 @@ import Header from "./components/custom components/Header.jsx";
 import NumberSystemTab from "./components/tab components/NumberSystemTab.jsx";
 import GraphTab from "./components/tab components/GraphTab.jsx";
 import MathTab from "./components/tab components/MathTab.jsx";
+import UnitConverterTab from "./components/tab components/UnitConverterTab.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/matrix" element={<MatrixTab />} />
         <Route path="/base-n" element={<NumberSystemTab />} />
         <Route path="/graph" element={<GraphTab />} />
+        <Route path="/unit-converter" element={<UnitConverterTab />} />
       </Routes>
     </>
   );
