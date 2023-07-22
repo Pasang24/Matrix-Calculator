@@ -1,8 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./Header.css";
+import { useEffect } from "react";
 
 function Header() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hamBurgerBtn = document.querySelector(".sidebar-toggle-btn");
+    const validRoutes = ["/matrix", "/base-n"];
+    if (!validRoutes.includes(location.pathname))
+      hamBurgerBtn.classList.add("remove-sidebar-toggle-btn");
+    else {
+      hamBurgerBtn.classList.remove("remove-sidebar-toggle-btn");
+    }
+  }, [location.pathname]);
+
+  const routes = [
+    { name: "Matrix", to: "/matrix" },
+    { name: "Base-N", to: "/base-n" },
+    { name: "Graph", to: "/" },
+  ];
+
   const handleToggle = () => {
     const sideBar = document.querySelector(".sidebar-wrapper");
     const sideBarCover = document.querySelector(".sidebar-background-cover");
@@ -16,27 +35,26 @@ function Header() {
     }
   };
 
+  const renderRoutes = routes.map((route, indx) => {
+    return (
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "route active-route" : "route"
+        }
+        to={route.to}
+        key={indx}
+      >
+        {route.name}
+      </NavLink>
+    );
+  });
+
   return (
     <nav className="header-wrapper">
       <button onClick={handleToggle} className="sidebar-toggle-btn">
         <RxHamburgerMenu size={20} />
       </button>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "route active-route" : "route"
-        }
-        to="/"
-      >
-        Matrix
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "route active-route" : "route"
-        }
-        to="/number-system"
-      >
-        Base-N
-      </NavLink>
+      {renderRoutes}
     </nav>
   );
 }

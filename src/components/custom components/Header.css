@@ -46,6 +46,10 @@
   color: white;
 }
 
+.remove-sidebar-toggle-btn {
+  display: none;
+}
+
 .show-sidebar {
   left: 0;
 }

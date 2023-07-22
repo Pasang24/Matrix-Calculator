@@ -1,4 +1,5 @@
-.tab-wrapper {
+.tab-wrapper,
+#calculator {
   position: relative;
   margin-top: 62px;
   height: calc(100vh - 64px);
