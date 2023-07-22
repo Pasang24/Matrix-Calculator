@@ -5,11 +5,14 @@ import "./Header.css";
 function Header() {
   const handleToggle = () => {
     const sideBar = document.querySelector(".sidebar-wrapper");
+    const sideBarCover = document.querySelector(".sidebar-background-cover");
 
     if (sideBar.classList.contains("show-sidebar")) {
       sideBar.classList.remove("show-sidebar");
+      sideBarCover.classList.remove("show-sidebar-cover");
     } else {
       sideBar.classList.add("show-sidebar");
+      sideBarCover.classList.add("show-sidebar-cover");
     }
   };
 

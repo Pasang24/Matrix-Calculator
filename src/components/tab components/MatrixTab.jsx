@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SideBar from "../custom components/SideBar.jsx";
 import Determinant from "../matrix components/Determinant.jsx";
 import Inverse from "../matrix components/Inverse.jsx";
 import Cofactor from "../matrix components/Cofactor.jsx";
@@ -8,6 +7,7 @@ import Transpose from "../matrix components/Transpose.jsx";
 import MatrixProduct from "../matrix components/MatrixProduct.jsx";
 import RowEchelon from "../matrix components/RowEchelon.jsx";
 import ReducedRowEchelon from "../matrix components/ReducedRowEchelon.jsx";
+import Tab from "../custom components/Tab.jsx";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");
@@ -23,16 +23,11 @@ function MatrixTab() {
   ];
 
   return (
-    <div className="tab-wrapper">
-      <SideBar
-        tabData={tabData}
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-      />
-      <div className="currentTab-wrapper">
-        {tabData.find((tab) => tab.name === currentTab).comp}
-      </div>
-    </div>
+    <Tab
+      tabData={tabData}
+      currentTab={currentTab}
+      setCurrentTab={setCurrentTab}
+    />
   );
 }
 

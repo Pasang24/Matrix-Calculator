@@ -3,9 +3,11 @@ import "./SideBar.css";
 function SideBar({ tabData, currentTab, setCurrentTab }) {
   const closeSideBar = () => {
     const bodyEl = document.body;
-    const sideBarEl = document.querySelector(".sidebar-wrapper");
+    const sideBar = document.querySelector(".sidebar-wrapper");
+    const sideBarCover = document.querySelector(".sidebar-background-cover");
     if (bodyEl.clientWidth < 720) {
-      sideBarEl.classList.remove("show-sidebar");
+      sideBar.classList.remove("show-sidebar");
+      sideBarCover.classList.remove("show-sidebar-cover");
     }
   };
 

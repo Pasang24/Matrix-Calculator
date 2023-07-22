@@ -1,10 +1,10 @@
 import { useState } from "react";
-import SideBar from "../custom components/SideBar.jsx";
 import Binary from "../num system components/Binary.jsx";
 import Decimal from "../num system components/Decimal.jsx";
 import Octal from "../num system components/Octal.jsx";
 import Hexa from "../num system components/Hexa.jsx";
 import BaseNToM from "../num system components/BaseNToM.jsx";
+import Tab from "../custom components/Tab.jsx";
 
 function NumberSystemTab() {
   const [currentTab, setCurrentTab] = useState("Base-2 to Other");
@@ -16,16 +16,11 @@ function NumberSystemTab() {
     { name: "Base-N to Base-M", comp: <BaseNToM /> },
   ];
   return (
-    <div className="tab-wrapper">
-      <SideBar
-        tabData={tabData}
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-      />
-      <div className="currentTab-wrapper">
-        {tabData.find((tab) => tab.name === currentTab).comp}
-      </div>
-    </div>
+    <Tab
+      tabData={tabData}
+      currentTab={currentTab}
+      setCurrentTab={setCurrentTab}
+    />
   );
 }
 

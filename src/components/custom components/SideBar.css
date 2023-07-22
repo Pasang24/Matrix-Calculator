@@ -1,13 +1,18 @@
 .sidebar-wrapper {
+  position: fixed;
   background-color: rgb(27, 27, 27);
   width: 240px;
-  min-height: calc(100vh - 64px);
   height: 100%;
-  position: fixed;
+  overflow-y: scroll;
   user-select: none;
   left: -240px;
   transition: left 200ms;
   z-index: 1;
+  scrollbar-width: none;
+}
+
+.sidebar-wrapper::-webkit-scrollbar {
+  width: 0px;
 }
 
 .sidebar-wrapper div {
