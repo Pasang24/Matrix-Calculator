@@ -10,10 +10,17 @@ function App() {
     <>
       <Header />
       <Routes>
-        {/* <Route path="/" element={<h1>Welcome to home page</h1>}></Route> */}
-        <Route path="/" element={<GraphTab />} />
+        <Route
+          path="/"
+          element={
+            <h2 style={{ margin: "100px 0", textAlign: "center" }}>
+              Under Construction! Please check out other routes/
+            </h2>
+          }
+        />
         <Route path="/matrix" element={<MatrixTab />} />
         <Route path="/base-n" element={<NumberSystemTab />} />
+        <Route path="/graph" element={<GraphTab />} />
       </Routes>
     </>
   );

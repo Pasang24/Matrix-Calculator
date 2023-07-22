@@ -17,9 +17,10 @@ function Header() {
   }, [location.pathname]);
 
   const routes = [
+    { name: "Math", to: "/" },
     { name: "Matrix", to: "/matrix" },
     { name: "Base-N", to: "/base-n" },
-    { name: "Graph", to: "/" },
+    { name: "Graph", to: "/graph" },
   ];
 
   const handleToggle = () => {
@@ -54,7 +55,7 @@ function Header() {
       <button onClick={handleToggle} className="sidebar-toggle-btn">
         <RxHamburgerMenu size={20} />
       </button>
-      {renderRoutes}
+      <div className="routes-wrapper">{renderRoutes}</div>
     </nav>
   );
 }
