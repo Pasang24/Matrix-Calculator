@@ -8,7 +8,7 @@ function Header() {
 
   useEffect(() => {
     const hamBurgerBtn = document.querySelector(".sidebar-toggle-btn");
-    const validRoutes = ["/matrix", "/base-n"];
+    const validRoutes = ["/", "/matrix", "/base-n"];
     if (!validRoutes.includes(location.pathname))
       hamBurgerBtn.classList.add("remove-sidebar-toggle-btn");
     else {
@@ -17,11 +17,11 @@ function Header() {
   }, [location.pathname]);
 
   const routes = [
-    { name: "Math", to: "/" },
-    { name: "Matrix", to: "/matrix" },
-    { name: "Base-N", to: "/base-n" },
-    { name: "Graph", to: "/graph" },
-    { name: "Unit Converter", to: "/unit-converter" },
+    { name: "Matrix", to: "/" },
+    // { name: "Matrix", to: "/matrix" },
+    // { name: "Base-N", to: "/base-n" },
+    // { name: "Graph", to: "/graph" },
+    // { name: "Unit Converter", to: "/unit-converter" },
   ];
 
   const handleToggle = () => {

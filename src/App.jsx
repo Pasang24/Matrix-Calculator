@@ -12,19 +12,19 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <h2 style={{ margin: "100px 0", textAlign: "center" }}>
               Under Construction! Please check out other routes/
             </h2>
           }
-        />
+        /> */}
         {/* <Route path="/" element={<MathTab />} /> */}
-        <Route path="/matrix" element={<MatrixTab />} />
-        <Route path="/base-n" element={<NumberSystemTab />} />
-        <Route path="/graph" element={<GraphTab />} />
-        <Route path="/unit-converter" element={<UnitConverterTab />} />
+        <Route path="/" element={<MatrixTab />} />
+        {/* <Route path="/base-n" element={<NumberSystemTab />} /> */}
+        {/* <Route path="/graph" element={<GraphTab />} /> */}
+        {/* <Route path="/unit-converter" element={<UnitConverterTab />} /> */}
       </Routes>
     </>
   );
