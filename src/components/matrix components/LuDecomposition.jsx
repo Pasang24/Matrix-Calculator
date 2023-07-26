@@ -41,7 +41,7 @@ function LuDecomposition() {
             <div className="steps-wrapper">
               <div className="step-wrapper">
                 <h2 className="output-title">L Matrix: </h2>
-                <OutputMatrix row={row} col={column}>
+                <OutputMatrix row={row} col={row}>
                   {result.LMatrix.map((row) => {
                     return row.map((el, indx) => (
                       <div className="result-matrix-box" key={indx}>
