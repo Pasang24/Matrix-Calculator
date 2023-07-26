@@ -8,6 +8,7 @@ import MatrixProduct from "../matrix components/MatrixProduct.jsx";
 import RowEchelon from "../matrix components/RowEchelon.jsx";
 import ReducedRowEchelon from "../matrix components/ReducedRowEchelon.jsx";
 import Tab from "../custom components/Tab.jsx";
+import LuDecomposition from "../matrix components/luDecomposition.jsx";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");
@@ -18,6 +19,7 @@ function MatrixTab() {
     { name: "Adjoint", comp: <Adjoint /> },
     { name: "Transpose", comp: <Transpose /> },
     { name: "Matrix Product", comp: <MatrixProduct /> },
+    { name: "LU Decomposition", comp: <LuDecomposition /> },
     { name: "Row Echelon Form", comp: <RowEchelon /> },
     { name: "Reduced Row Echelon Form", comp: <ReducedRowEchelon /> },
   ];

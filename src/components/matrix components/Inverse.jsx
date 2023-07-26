@@ -45,7 +45,7 @@ function Inverse() {
               </OutputMatrix>
             </>
           ) : (
-            <h2>Inverse doesn't exist</h2>
+            <h2 className="output-title">Inverse doesn't exist</h2>
           )}
         </>
       )}
