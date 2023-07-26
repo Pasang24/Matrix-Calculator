@@ -26,7 +26,7 @@ function LuDecomposition() {
   return (
     <div className="container">
       {" "}
-      <h2>LU Decomposition Calculator</h2>
+      <h2 className="calc-title">LU Decomposition Calculator</h2>
       <MatrixLayout
         setResult={getResults}
         setShowResult={getShowResults}
