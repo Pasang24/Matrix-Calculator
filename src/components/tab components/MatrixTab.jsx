@@ -8,7 +8,7 @@ import MatrixProduct from "../matrix components/MatrixProduct.jsx";
 import RowEchelon from "../matrix components/RowEchelon.jsx";
 import ReducedRowEchelon from "../matrix components/ReducedRowEchelon.jsx";
 import Tab from "../custom components/Tab.jsx";
-import LuDecomposition from "../matrix components/luDecomposition.jsx";
+import LuDecomposition from "../matrix components/LuDecomposition.jsx";
 
 function MatrixTab() {
   const [currentTab, setCurrentTab] = useState("Determinant");
